@@ -1,0 +1,222 @@
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu:wght@400;500;700&display=swap');
+:root{
+    /*PRIMARY COLORS*/
+    --MarineBlue: hsl(213, 96%, 18%)
+    --PurplishBlue: hsl(243, 100%, 62%)
+    --PastelBlue: hsl(228, 100%, 84%)
+    --LightBlue: hsl(206, 94%, 87%)
+    --Strawberryred: hsl(354, 84%, 57%)
+    /*SECONDARY COLORS*/
+    --CoolGray: hsl(231, 11%, 63%)
+    --LightGray: hsl(229, 24%, 87%)
+    --Magnolia: hsl(217, 100%, 97%)
+    --Alabaster: hsl(231, 100%, 99%)
+    --White: hsl(0, 0%, 100%)
+}
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+body{
+    height:100vh;
+    display:grid;
+    place-items:center center;
+    font-family:'Ubuntu', sans-serif;
+    background-color:#f4f2f2;
+}
+main{
+    width:780px;
+    height:490px;
+    display:flex;
+    padding:15px;
+    border-radius:10px;
+    background-color:#fff;
+}
+main aside{
+    width:320px;
+    padding:25px;
+    border-radius:10px;
+    display:flex;
+    flex-direction:column;
+    gap:1em;
+    background-image:url("../images/bg-sidebar-desktop.svg");
+    background-size:cover;
+}
+aside .steps{
+    display:flex;
+    gap:1em;
+    cursor:pointer;
+}
+aside .steps span{
+    color:#fff;
+    padding:7px 12px;
+    border:2px solid #fff;
+    border-radius:50px;
+}
+.steps .step-title{
+    display:flex;
+    flex-direction:column;
+    gap:0.2em;
+}
+.step-title h2{
+    color:#fff;
+    font-size:1em;
+}
+.step-title p{
+    color:#fff;
+    font-size:0.7em;
+}
+/*SECTION RIGHT*/
+main section{
+    width:100%;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    flex-direction:column;
+    padding:30px 0;
+}
+section article{
+    width:70%;
+    display:flex;
+    flex-direction:column;
+    gap:1em;
+}
+
+
+
+
+/*PAGINA 1*/
+article h1{
+    font-size:1.9em;
+    color:rgb(25, 47, 145);
+}
+article p{
+    font-size:0.7em;
+    white-space:nowrap;/*impede a quebra de linha*/
+}
+article form{
+    display:flex;
+    flex-direction:column;
+    gap:0.3em;
+}
+form label{
+    display:flex;
+    justify-content:space-between;
+    margin-top:20px;
+    font-size:0.7em;
+    color:rgb(25, 47, 145);
+}
+form input{
+    color:rgb(25, 47, 145);
+    height:30px;
+    border:1px solid rgb(128, 128, 128);
+    border-radius:5px;
+    outline:0;
+    text-indent:1em;
+    font-weight:700;
+}
+input:focus{
+    border:1px solid rgb(25, 47, 145);
+    color:rgb(25, 47, 145);
+}
+section #btns{
+    width:70%;
+    display:flex;
+    justify-content:space-between;
+}
+#btns button:nth-child(1){
+    background-color:#fff;
+    border:none;
+    outline:0;
+    color:rgb(128, 128, 128);
+    display:none;
+    cursor:pointer;
+}
+#btns button:nth-child(2){
+    font-size:0.7em;
+    padding:0.8em 1em;
+    color:#fff;
+    background-color:rgb(25, 47, 145);
+    border:none;
+    outline:0;
+    margin-left:auto;
+    border-radius:5px;
+    cursor:pointer;
+}
+
+
+
+/*PAGINA 2*/
+article #plans{
+    display:flex;
+    justify-content:space-between;
+}
+#plans .plan{
+    border:1px solid black;
+    width:30%;
+    height:130px;
+    padding:10px;
+    border-radius:5px;
+    border-color:rgb(25, 47, 145);
+}
+.plan{
+    cursor:pointer;
+}
+.plan h4{
+    color:rgb(25, 47, 145);
+    margin-top:30px;
+}
+.plan p{
+    margin-top:5px;
+    font-size:0.7em;
+    color:rgb(128, 128, 127);
+}
+article #selection{
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    gap:1em;
+}
+#selection h6{
+    color:rgb(128, 128, 127);
+}
+
+/*toggle component*/
+input[type=checkbox]{
+    height: 0;
+    width: 0;
+    visibility: hidden;
+  }
+  
+  label {
+    cursor: pointer;
+    text-indent: -9999px;
+    width: 30px;
+    height: 15px;
+    background: rgb(25, 47, 145);
+    display: block;
+    border-radius: 100px;
+    position: relative;
+  }
+  
+  label:after {
+    content: '';
+    position: absolute;
+    top: 2px;
+    left: 4px;
+    width: 10px;
+    height: 10px;
+    background: #fff;
+    border-radius: 90px;
+    transition: 0.3s;
+  }
+  input:checked + label:after {
+    left: calc(100% - 5px);
+    transform: translateX(-100%);
+  }
+  
+  label:active:after {
+    width: 15px;
+  }
+  /*toggle component*/
