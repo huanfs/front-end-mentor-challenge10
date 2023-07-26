@@ -220,3 +220,64 @@ input[type=checkbox]{
     width: 15px;
   }
   /*toggle component*/
+
+  /*PAGINA 3*/
+  article #aditionals{
+    display:flex;
+    flex-direction:column;
+    gap:0.5em;
+  }
+  #aditionals .checkMark{
+    height:15px;
+    width:15px;
+    visibility:visible;
+    accent-color:rgb(25, 47, 145);
+    cursor:pointer;
+  }
+  #aditionals .adds{
+    border:1px solid rgb(186, 182, 182);
+    width:100%;
+    display:flex;
+    align-items:center;
+    gap:1.5em;
+    padding:1em;
+    border-radius:5px;
+    cursor:default;
+  }
+  #aditionals .add-descrip{
+    display:flex;
+    flex-direction:column;
+    gap:0.5em;
+  }
+  .add-descrip h4{
+    color:rgb(25, 47, 145);
+  }
+  .add-descrip p{
+    color:rgb(128, 128, 127);
+  }
+  .adds .price{
+    margin-left:auto;
+    color:rgb(128, 128, 127);
+  }
+
+  /*pagina 4*/
+  .options:nth-child(2){
+    border-top:1px solid gray;
+    border-bottom:1px solid gray;
+  }
+  #finish .options{
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    padding:1em;
+  }
+
+  #total{
+    display:flex;
+    justify-content:space-between;
+    padding:1em;
+  }
+  #selected-plan{
+    color:rgb(25, 47, 145);
+    font-weight:700;
+  }

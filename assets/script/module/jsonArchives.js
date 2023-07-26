@@ -57,3 +57,103 @@ const stepOne = {
       }
     ]
   };
+
+  const stepThree = {
+    "title": "Pick add-ons",
+    "description": "add-ons helps enhance your gaming experiences",
+    "div": {
+      "id": "aditionals",
+      "div": [
+        {
+          "class": "adds",
+          "input": {
+            "class": "checkMark",
+            "type": "checkbox"
+          },
+          "div": {
+            "class": "add-descrip",
+            "h4": "online service",
+            "p": "access to multiplayer games"
+          },
+          "p": {
+            "class": "price",
+            "$t": "+$1/mo"
+          }
+        },
+        {
+          "class": "adds",
+          "input": {
+            "class": "checkMark",
+            "type": "checkbox"
+          },
+          "div": {
+            "class": "add-descrip",
+            "h4": "larger storage",
+            "p": "extra 1gb cloud storage"
+          },
+          "p": {
+            "class": "price",
+            "$t": "+$2/mo"
+          }
+        },
+        {
+          "class": "adds",
+          "input": {
+            "class": "checkMark",
+            "type": "checkbox"
+          },
+          "div": {
+            "class": "add-descrip",
+            "h4": "customizable profile",
+            "p":"custom theme on your profile"
+          },
+          "$t":"+$3/mo"
+        }
+      ]
+    }
+  }
+
+  const stepFour = {
+    "h1": "Finishing Up",
+    "p": "double check everything looks OK before confirming.",
+    "div": {
+      "@id": "finish",
+      "div": [
+        {
+          "@id": "selected-plan",
+          "@class": "options",
+          "h5": {
+            "_text": "plano()",
+            "span": ""
+          },
+          "span": {
+            "@class": "valor",
+            "_text": "12"
+          }
+        },
+        {
+          "@class": "options",
+          "p": "ideia",
+          "span": {
+            "@class": "valor",
+            "_text": "12"
+          }
+        },
+        {
+          "@class": "options",
+          "p": "carro",
+          "span": {
+            "@class": "valor",
+            "_text": "12"
+          }
+        }
+      ]
+    },
+    "div2": {
+      "@id": "total",
+      "p1": "total",
+      "p2": {
+        "_text":"valor total"
+      }
+    }
+  }

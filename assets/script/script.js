@@ -28,5 +28,15 @@ function dataCheck(aria){
 }
 
 function nextStep(){
-   //passa as etapas
+//     let layout = stepOne;
+//    for(let x of Object.values(layout)){
+//     ariaStage.appendChild(x);
+//    }
+
+   let layout = stepOne;
+   for(let x of Object.values(layout)){
+       let element = document.createElement(x.tagName);
+       element.textContent = x.textContent;
+       ariaStage.appendChild(element);
+   }
 }
