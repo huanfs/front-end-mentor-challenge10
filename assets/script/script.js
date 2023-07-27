@@ -1,12 +1,9 @@
-let steps = document.querySelectorAll(".steps");
-let ariaStage = document.querySelector("section article");
-let title = document.querySelector("h1");
-let subtittle = document.querySelector("p");
-let ariaForm = document.querySelector("form");
-let inputs = document.querySelectorAll("input");
-let btn = document.querySelectorAll("#btns button");
+let field = document.querySelectorAll("article");
+let inputs = document.querySelectorAll(".userData");
+let btn = document.querySelectorAll("#btns button")[1];
+let btnGoBack = document.querySelectorAll("#btns button")[0];
 //ADIÇÃO DOS EVENTOS
-btn[1].addEventListener("click", nextStep);
+btn.addEventListener("click", nextStep);
 for(let item of inputs){
     item.addEventListener("blur",dataCheck);
 }
@@ -26,17 +23,9 @@ function dataCheck(aria){
         label.lastChild.tagName==='SPAN'?label.lastChild.remove():aria.target.removeEventListener("blur", dataCheck);
     } 
 }
-
 function nextStep(){
-//     let layout = stepOne;
-//    for(let x of Object.values(layout)){
-//     ariaStage.appendChild(x);
-//    }
+    step++;
 
-   let layout = stepOne;
-   for(let x of Object.values(layout)){
-       let element = document.createElement(x.tagName);
-       element.textContent = x.textContent;
-       ariaStage.appendChild(element);
-   }
+    //btnGoBack.addEventListener("click", previousStage);
 }
+

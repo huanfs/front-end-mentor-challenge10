@@ -93,6 +93,7 @@ article h1{
 }
 article p{
     font-size:0.7em;
+    color:gray;
     white-space:nowrap;/*impede a quebra de linha*/
 }
 article form{
@@ -183,13 +184,12 @@ article #selection{
 }
 
 /*toggle component*/
-input[type=checkbox]{
+#input[type=checkbox]{
     height: 0;
     width: 0;
     visibility: hidden;
   }
-  
-  label {
+  #label {
     cursor: pointer;
     text-indent: -9999px;
     width: 30px;
@@ -199,8 +199,7 @@ input[type=checkbox]{
     border-radius: 100px;
     position: relative;
   }
-  
-  label:after {
+  #label:after {
     content: '';
     position: absolute;
     top: 2px;
@@ -211,12 +210,11 @@ input[type=checkbox]{
     border-radius: 90px;
     transition: 0.3s;
   }
-  input:checked + label:after {
-    left: calc(100% - 5px);
+  #input:checked + #label:after {
+    left: calc(100% - 4px);
     transform: translateX(-100%);
   }
-  
-  label:active:after {
+  #label:active:after {
     width: 15px;
   }
   /*toggle component*/
@@ -262,8 +260,12 @@ input[type=checkbox]{
 
   /*pagina 4*/
   .options:nth-child(2){
-    border-top:1px solid gray;
-    border-bottom:1px solid gray;
+    border-top:1px solid rgba(231, 214, 214, 0.799);
+    border-bottom:1px solid rgba(231, 214, 214, 0.799);
+  }
+  #finish{
+    background-color:rgb(246, 243, 243);
+    border-radius:5px;
   }
   #finish .options{
     display:flex;
@@ -271,7 +273,6 @@ input[type=checkbox]{
     justify-content:space-between;
     padding:1em;
   }
-
   #total{
     display:flex;
     justify-content:space-between;
@@ -280,4 +281,19 @@ input[type=checkbox]{
   #selected-plan{
     color:rgb(25, 47, 145);
     font-weight:700;
+  }
+  /*PAGINA FINAL*/
+  #step5{
+    width:400px;
+    height:600px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+  }
+  #thankyou{
+    width:100px;
+  }
+  #thank-message{
+    text-align:center;
+    white-space:wrap;
   }
