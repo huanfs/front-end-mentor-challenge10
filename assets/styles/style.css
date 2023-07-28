@@ -297,3 +297,8 @@ article #selection{
     text-align:center;
     white-space:wrap;
   }
+
+  /*ESCONDER PÁGINAS*/
+  #step2, #step3, #step4, #step5{
+    display:none;
+  }

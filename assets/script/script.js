@@ -1,6 +1,7 @@
 let field = document.querySelectorAll("article");
 let inputs = document.querySelectorAll(".userData");
 let btn = document.querySelectorAll("#btns button")[1];
+let cont = 0;
 let btnGoBack = document.querySelectorAll("#btns button")[0];
 //ADIÇÃO DOS EVENTOS
 btn.addEventListener("click", nextStep);
@@ -24,8 +25,7 @@ function dataCheck(aria){
     } 
 }
 function nextStep(){
-    step++;
-
-    //btnGoBack.addEventListener("click", previousStage);
+    //adicionar um bloco de código que detecte qual elemento está article
+    //está visivel no momento, para esconder os outros
 }
 
