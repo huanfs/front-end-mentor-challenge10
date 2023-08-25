@@ -87,6 +87,9 @@ section article{
 
 
 /*PAGINA 1*/
+#step1{
+  display:flex;
+}
 article h1{
     font-size:1.9em;
     color:rgb(25, 47, 145);

@@ -1,6 +1,6 @@
 
 //OBJETOS JSON
-const stepOne = {
+const step1 = {
     "title": "Personal info",
     "description": "Please, provide your name, your email address, and your phone number.",
     "form": {
@@ -13,7 +13,7 @@ const stepOne = {
           "placeholder": "E. S. Durmontd"
         },
         {
-          "label": "Email addtress",
+          "label": "Email address",
           "type": "text",
           "id": "Email-address",
           "placeholder": "mailmailmail@mail.com"
@@ -28,7 +28,7 @@ const stepOne = {
     }
   } 
 
-  const stepTwo = {
+  const step2 = {
     "title": "Select your plan",
     "description": "You have a option the option of monthly or yearly billing",
     "plans": [
@@ -58,7 +58,7 @@ const stepOne = {
     ]
   };
 
-  const stepThree = {
+  const step3 = {
     "title": "Pick add-ons",
     "description": "add-ons helps enhance your gaming experiences",
     "div": {
@@ -113,7 +113,7 @@ const stepOne = {
     }
   }
 
-  const stepFour = {
+  const step4 = {
     "h1": "Finishing Up",
     "p": "double check everything looks OK before confirming.",
     "div": {
