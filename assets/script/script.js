@@ -6,9 +6,11 @@ let cont = 0;
 let btnGoBack = document.querySelectorAll("#btns button")[0];
 //ADIÇÃO DOS EVENTOS
 btn.addEventListener("click", nextStep);
+btnGoBack.addEventListener("click", previousStep);
 for(let item of inputs){
     item.addEventListener("blur",dataCheck);
 }
+//função que checa os inputs e alerta sobre dados invalidos ou faltosos
 function dataCheck(aria){
     let label = aria.target.previousElementSibling;
     let errorMsg = document.createElement("span");
@@ -32,17 +34,25 @@ function nextStep(item){
     if(cont>5){
         cont=5;
     }
-    console.log(cont);
-    //switch case observa qual a contagem de CONT
-    //se for 1 define que a primeira tela suma e a proxima apreça,
-    //sendo assim sucessivamente
-    //*preciso fazer com que já de inicio o número 1 de step localizado,
-    //em aside fique com background destacado pois está com a contagem avançada
+    activeStep();
+}
+function previousStep(item){
+    cont--;
+    if(cont<0){
+        cont=0;
+    }
+    activeStep();
+}
+//função que verifica os steps
+function activeStep(){
+    cont>0?btnGoBack.style.display="flex":btnGoBack.style.display="none";
     switch(cont){
-        case 1: field[0].style.display="none";field[1].style.display="flex";spans[0].style.backgroundColor="rgb(150, 246, 248)";break;
-        case 2: field[1].style.display="none";field[2].style.display="flex";spans[1].style.backgroundColor="rgb(150, 246, 248)";spans[0].style.backgroundColor="transparent";break;
-        case 3: field[2].style.display="none";field[3].style.display="flex";spans[2].style.backgroundColor="rgb(150, 246, 248)";spans[1].style.backgroundColor="transparent";break;
-        case 4: field[3].style.display="none";field[4].style.display="flex";spans[3].style.backgroundColor="rgb(150, 246, 248)";spans[2].style.backgroundColor="transparent";break;
+        //preciso arrumar esta secão para que o botão de previa e d proximo exibam corretamente os articles com o conteudo da tela;
+        case 0: field[2].style.display="none";field[0].style.display="flex";spans[0].style.backgroundColor="rgb(185, 227, 213)";spans[3].style.backgroundColor="transparent";
+        case 1: field[0].style.display="none";field[1].style.display="flex";spans[1].style.backgroundColor="rgb(185, 227, 213)";break;
+        case 2: field[1].style.display="none";field[2].style.display="flex";spans[2].style.backgroundColor="rgb(185, 227, 213)";spans[1].style.backgroundColor="transparent";break;
+        case 3: field[2].style.display="none";field[3].style.display="flex";spans[3].style.backgroundColor="rgb(185, 227, 213)";spans[2].style.backgroundColor="transparent";break;
+        case 4: field[3].style.display="none";field[4].style.display="flex";spans[3].style.backgroundColor="transparent";spans[2].style.backgroundColor="transparent";break;
     }
 }
 
