@@ -10,7 +10,7 @@ btnGoBack.addEventListener("click", previousStep);
 for(let item of inputs){
     item.addEventListener("blur",dataCheck);
 }
-//função que checa os inputs e alerta sobre dados invalidos ou faltosos
+//página 1: função que checa os inputs e alerta sobre dados invalidos ou faltosos
 function dataCheck(aria){
     let label = aria.target.previousElementSibling;
     let errorMsg = document.createElement("span");
@@ -27,6 +27,60 @@ function dataCheck(aria){
         label.lastChild.tagName==='SPAN'?label.lastChild.remove():aria.target.removeEventListener("blur", dataCheck);
     } 
 }
+//página 2: função que seleciona o plano e o armazena em sessionStorage
+let plan = document.querySelectorAll(".plan");
+for(let i of plan){
+    i.addEventListener("click",addPlan);
+}
+function addPlan(sPlan){
+    for(let i of plan){
+        i.removeAttribute("id");
+    }
+    sPlan.target.id="selectedPlan";
+    //salvo o plano em sessionStorage
+    sessionStorage.setItem("plan",sPlan.target.children[1].innerHTML);
+}
+
+
+
+
+
+
+
+
+//página 3: função que adiciona/remove adicionais
+let checkAditionals = document.querySelectorAll(".checkMark");
+let selectedPlans = [];
+for(let i of checkAditionals){
+    i.addEventListener("click",aditionals);
+}
+function aditionals(add){
+    if(add.target.checked){
+        let selectAPlan = add.target.nextElementSibling;
+        selectedPlans.push(selectAPlan.children[0].innerHTML);
+
+    }
+    else{
+        let selectAPlan = add.target.nextElementSibling;
+        let rmv = selectedPlans.indexOf(selectAPlan.children[0].innerHTML);
+        selectedPlans.splice(rmv,1);
+        //apos removidos ou adicionados. salva os planos num array em sessionStorage
+        //que devo acessar atraves do método split(), onde transformarei a string
+        //contendo os planos selecionados em dois arrays contendo apenas o plano cada 1
+        //que erá dividido informando a virgula que separa os planos na string
+        // let i = sessionStorage.aditionals.split(",") <---
+        sessionStorage.setItem("aditionals",selectedPlans);
+    }
+}
+
+
+
+
+
+
+
+
+
 //instruções de avanco dos steps
 btn.addEventListener("click", nextStep);
 function nextStep(item){

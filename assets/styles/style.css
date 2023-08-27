@@ -167,6 +167,9 @@ article #plans{
 .plan{
     cursor:pointer;
 }
+#selectedPlan{
+  background-color:green;
+}
 .plan h4{
     color:rgb(25, 47, 145);
     margin-top:30px;
