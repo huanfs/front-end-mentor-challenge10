@@ -65,31 +65,51 @@ function caseZero(){
     for(let i=0; i<5; i++){
         spans[i].style.backgroundColor="transparent";
     }
-    spans[0].style.backgroundColor="rgb(185, 227, 213)"
+    spans[0].style.backgroundColor="rgb(185, 227, 213)"//
+    for(let i=0; i<5; i++){
+        field[i].style.display="none";
+    }
+    field[0].style.display="flex";
 }
 function caseOne(){
     for(let i=0; i<5; i++){
         spans[i].style.backgroundColor="transparent";
     }
-    spans[1].style.backgroundColor="rgb(185, 227, 213)"
+    spans[1].style.backgroundColor="rgb(185, 227, 213)";//
+    for(let i=0; i<5; i++){
+        field[i].style.display="none";
+    }
+    field[1].style.display="flex";
 }
 function caseTwo(){
     for(let i=0; i<5; i++){
         spans[i].style.backgroundColor="transparent";
     }
-    spans[2].style.backgroundColor="rgb(185, 227, 213)"
+    spans[2].style.backgroundColor="rgb(185, 227, 213)";//
+    for(let i=0; i<5; i++){
+        field[i].style.display="none";
+    }
+    field[2].style.display="flex";
 }
 function caseTree(){
     for(let i=0; i<5; i++){
         spans[i].style.backgroundColor="transparent";
     }
-    spans[3].style.backgroundColor="rgb(185, 227, 213)"
+    spans[3].style.backgroundColor="rgb(185, 227, 213)";//
+    for(let i=0; i<5; i++){
+        field[i].style.display="none";
+    }
+    field[3].style.display="flex";
 }
 function caseFour(){
     for(let i=0; i<5; i++){
         spans[i].style.backgroundColor="transparent";
     }
-    spans[4].style.backgroundColor="rgb(185, 227, 213)"
+    spans[4].style.backgroundColor="rgb(185, 227, 213)";//
+    for(let i=0; i<5; i++){
+        field[i].style.display="none";
+    }
+    field[4].style.display="flex";
 }
 
 
