@@ -48,11 +48,48 @@ function activeStep(){
     cont>0?btnGoBack.style.display="flex":btnGoBack.style.display="none";
     switch(cont){
         //preciso arrumar esta secão para que o botão de previa e d proximo exibam corretamente os articles com o conteudo da tela;
-        case 0: field[2].style.display="none";field[0].style.display="flex";spans[0].style.backgroundColor="rgb(185, 227, 213)";spans[3].style.backgroundColor="transparent";
-        case 1: field[0].style.display="none";field[1].style.display="flex";spans[1].style.backgroundColor="rgb(185, 227, 213)";break;
-        case 2: field[1].style.display="none";field[2].style.display="flex";spans[2].style.backgroundColor="rgb(185, 227, 213)";spans[1].style.backgroundColor="transparent";break;
-        case 3: field[2].style.display="none";field[3].style.display="flex";spans[3].style.backgroundColor="rgb(185, 227, 213)";spans[2].style.backgroundColor="transparent";break;
-        case 4: field[3].style.display="none";field[4].style.display="flex";spans[3].style.backgroundColor="transparent";spans[2].style.backgroundColor="transparent";break;
+        // case 0: field[2].style.display="none";field[0].style.display="flex";spans[0].style.backgroundColor="rgb(185, 227, 213)";spans[3].style.backgroundColor="transparent";
+        // case 1: field[0].style.display="none";field[1].style.display="flex";spans[1].style.backgroundColor="rgb(185, 227, 213)";break;
+        // case 2: field[1].style.display="none";field[2].style.display="flex";spans[2].style.backgroundColor="rgb(185, 227, 213)";spans[1].style.backgroundColor="transparent";break;
+        // case 3: field[2].style.display="none";field[3].style.display="flex";spans[3].style.backgroundColor="rgb(185, 227, 213)";spans[2].style.backgroundColor="transparent";break;
+        // case 4: field[3].style.display="none";field[4].style.display="flex";spans[3].style.backgroundColor="transparent";spans[2].style.backgroundColor="transparent";break;
+        //pra cada case uma função especifica
+        case 0: caseZero();break;
+        case 1: caseOne();break;
+        case 2: caseTwo();break;
+        case 3: caseTree();break;
+        case 4: caseFour();break;
     }
 }
+function caseZero(){
+    for(let i=0; i<5; i++){
+        spans[i].style.backgroundColor="transparent";
+    }
+    spans[0].style.backgroundColor="rgb(185, 227, 213)"
+}
+function caseOne(){
+    for(let i=0; i<5; i++){
+        spans[i].style.backgroundColor="transparent";
+    }
+    spans[1].style.backgroundColor="rgb(185, 227, 213)"
+}
+function caseTwo(){
+    for(let i=0; i<5; i++){
+        spans[i].style.backgroundColor="transparent";
+    }
+    spans[2].style.backgroundColor="rgb(185, 227, 213)"
+}
+function caseTree(){
+    for(let i=0; i<5; i++){
+        spans[i].style.backgroundColor="transparent";
+    }
+    spans[3].style.backgroundColor="rgb(185, 227, 213)"
+}
+function caseFour(){
+    for(let i=0; i<5; i++){
+        spans[i].style.backgroundColor="transparent";
+    }
+    spans[4].style.backgroundColor="rgb(185, 227, 213)"
+}
+
 
