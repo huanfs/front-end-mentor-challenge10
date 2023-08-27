@@ -292,6 +292,7 @@ article #selection{
     display:flex;
     align-items:center;
     justify-content:center;
+    transition:0.5s;
   }
   #thankyou{
     width:100px;
