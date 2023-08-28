@@ -72,6 +72,32 @@ function aditionals(add){
         sessionStorage.setItem("aditionals",selectedPlans);
     }
 }
+//PRECISO AGORA EXIBIR AS INFORMAÇÕES NA TELA DE REVISÃO STEP4
+//apos isso finalizar o layout mobile
+//página 4: exibir as informações de plano, adicionais e valores armazenados
+//em sessionStorage na tela para revisão do cliente
+let reviewArea = document.querySelector("#finish");
+let reviewInfo = document.querySelectorAll(".options");
+function showPlans(){
+    if(sessionStorage.getItem("plan")!=null){
+        let planDescription = reviewInfo[0].children;
+        planDescription[0].innerHTML=sessionStorage.plan;
+        planDescription[1].innerHTML="+12$";
+    }
+    else if(sessionStorage.getItem("plan")==null){
+        alert("volte e selecione um plano");
+        // window.location.reload();
+        cont=1;
+        activeStep();
+    }
+    if(sessionStorage.getItem("aditionals")!=null){
+        let adds = sessionStorage.aditionals.split(",");
+        let ad1 = reviewInfo[1].children;
+        ad1[0].innerHTML=adds[0];
+        ad1[1].innerHTML="+2$";
+    }
+}
+
 
 
 
@@ -104,7 +130,7 @@ function activeStep(){
         case 0: caseZero();break;
         case 1: caseOne();break;
         case 2: caseTwo();break;
-        case 3: caseTree();break;
+        case 3: caseTree();showPlans();break;
         case 4: caseFour();break;
     }
 }
@@ -160,6 +186,8 @@ function caseFour(){
     let finalBtnArea = document.querySelector("#btns");
     finalBtnArea.style.display="none";
     setTimeout(x=>{
+        sessionStorage.removeItem("aditionals");
+        sessionStorage.removeItem("plan");
         window.location.reload();
     },3000);
 }
