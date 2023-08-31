@@ -90,15 +90,26 @@ function showPlans(){
         cont=1;
         activeStep();
     }
-    if(sessionStorage.getItem("aditionals")!=null){
+    //preciso adicionar a funcionalidade que adiciona as listras com os valores
+    //dos planos armazenados previamente no sessionStorage
+    if(sessionStorage.getItem("aditionals")==null){
+        for(let i=1; i<=reviewInfo.length; i++){
+            reviewInfo[i].style.display="none";
+        }
+     }
+     else if(sessionStorage.getItem("aditionals")!=null){
         let adds = sessionStorage.aditionals.split(",");
-        let ad1 = reviewInfo[1].children;
-        ad1[0].innerHTML=adds[0];
-        ad1[1].innerHTML="+2$";
-    }
+        showLists(adds);
+     }
 }
-
-
+//funções que revelam as listas da tabela de plano
+function showLists(adds) {
+    console.log(adds);
+    //PRECISO CRIAR UMA FUNÇÃO QUE ANALISE OS ADICIONAIS INCLUSOS
+    //EM SESSIONSTORAGE E DESFAÇA O DISPLAY "NONE" DE REVIEWiNFO
+    //DE ACORDO COM O NÚMERO DE ADICIONAIS ENCONTRADOS SALVOS
+}
+  
 
 
 
