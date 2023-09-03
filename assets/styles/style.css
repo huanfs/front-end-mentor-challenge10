@@ -343,7 +343,7 @@ article #selection{
     margin-top:-3.5em;
     background-color:#fff;
   }
-  #step1 #description{
+  #description{
     overflow:hidden;
   }
   section #btns{
@@ -359,4 +359,29 @@ article #selection{
     height:35px;
   }
   /* prosseguir com o layout mobile das seções 2 em diante */
+  main h1{
+    font-size:1.1em;
+  }
+  #step2 #plans{
+    flex-direction:column;
+    gap:0.5em;
+  }
+  #plans .plan{
+    height:4.5em;
+    width:100%;
+    display:flex;
+    align-items:center;
+    justify-content:space-around;
+    flex-direction:row;
+  }
+  .plan h4{
+    margin-top:0px;
+  }
+  #aditionals .adds{
+    justify-content:space-around;
+    gap:0.2em;
+  }
+  #thank-message{
+    width:70%;
+  }
 }
