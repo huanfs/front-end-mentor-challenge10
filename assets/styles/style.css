@@ -309,3 +309,54 @@ article #selection{
   #step2, #step3, #step4, #step5{
     display:none;
   }
+
+@media screen and (max-width:400px){
+  main{
+    height:100vh;
+    width:100vw;
+    flex-direction:column;
+    align-items:center;
+    border-radius:0px;
+    background-color:#d8d3d3;
+  }
+  main aside{
+    height:25vh;
+    width:100vw;
+    flex-direction:row;
+    align-items:center;
+    justify-content:center;
+    border-radius:0px;
+    background-image:url("../images/bg-sidebar-mobile.svg");
+    background-size:cover;
+  }
+  aside .steps .step-title{
+    display:none;
+  }
+  aside .steps{
+    margin-top:-3em;
+  }
+
+  main section{
+    height:60vh;
+    width:80vw;
+    border-radius:10px;
+    margin-top:-3.5em;
+    background-color:#fff;
+  }
+  #step1 #description{
+    overflow:hidden;
+  }
+  section #btns{
+    height:10vh;
+    width:100vw;
+    position:absolute;
+    bottom:0;
+    background-color:#fff;
+    align-items:center;
+    padding:0 2em;
+  }
+  #btns button:nth-child(2){
+    height:35px;
+  }
+  /* prosseguir com o layout mobile das seções 2 em diante */
+}
