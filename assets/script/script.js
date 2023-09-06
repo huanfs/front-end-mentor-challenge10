@@ -41,13 +41,6 @@ function addPlan(sPlan){
     sessionStorage.setItem("plan",sPlan.target.children[1].innerHTML);
 }
 
-
-
-
-
-
-
-
 //página 3: função que adiciona/remove adicionais
 let checkAditionals = document.querySelectorAll(".checkMark");
 let selectedPlans = [];
@@ -58,7 +51,7 @@ function aditionals(add){
     if(add.target.checked){
         let selectAPlan = add.target.nextElementSibling;
         selectedPlans.push(selectAPlan.children[0].innerHTML);
-
+        sessionStorage.setItem("aditionals",selectedPlans);
     }
     else{
         let selectAPlan = add.target.nextElementSibling;
@@ -71,11 +64,13 @@ function aditionals(add){
         // let i = sessionStorage.aditionals.split(",") <---
         sessionStorage.setItem("aditionals",selectedPlans);
     }
+    if(sessionStorage.aditionals==undefined){
+        let options = document.querySelectorAll(".options");
+        for(let i = 1; i<4; i++){
+            options[i].style.display="none";
+        }
+    }
 }
-//PRECISO AGORA EXIBIR AS INFORMAÇÕES NA TELA DE REVISÃO STEP4
-//apos isso finalizar o layout mobile
-//página 4: exibir as informações de plano, adicionais e valores armazenados
-//em sessionStorage na tela para revisão do cliente
 let reviewArea = document.querySelector("#finish");
 let reviewInfo = document.querySelectorAll(".options");
 function showPlans(){
@@ -86,12 +81,9 @@ function showPlans(){
     }
     else if(sessionStorage.getItem("plan")==null){
         alert("volte e selecione um plano");
-        // window.location.reload();
         cont=1;
         activeStep();
     }
-    //preciso adicionar a funcionalidade que adiciona as listras com os valores
-    //dos planos armazenados previamente no sessionStorage
     if(sessionStorage.getItem("aditionals")==null){
         for(let i=1; i<=reviewInfo.length; i++){
             reviewInfo[i].style.display="none";
@@ -105,19 +97,27 @@ function showPlans(){
 //funções que revelam as listas da tabela de plano
 function showLists(adds) {
     console.log(adds);
-    //PRECISO CRIAR UMA FUNÇÃO QUE ANALISE OS ADICIONAIS INCLUSOS
-    //EM SESSIONSTORAGE E DESFAÇA O DISPLAY "NONE" DE REVIEWiNFO
-    //DE ACORDO COM O NÚMERO DE ADICIONAIS ENCONTRADOS SALVOS
+    let options = document.querySelectorAll(".options");
+    console.log(options);
+    if(adds[0]!=undefined){
+        options[1].style.display="flex";
+        options[1].firstElementChild.innerHTML=adds[0];
+        options[1].lastElementChild.innerHTML="+2 USD"
+    }
+    if(adds[1]!=undefined){
+        options[2].style.display="flex";
+        options[2].firstElementChild.innerHTML=adds[1];
+        options[2].lastElementChild.innerHTML="+1 USD"
+    }
+    if(adds[2]!=undefined){
+        options[3].style.display="flex";
+        options[3].firstElementChild.innerHTML=adds[2];
+        options[3].lastElementChild.innerHTML="+3 USD";
+    }
+    let total = document.querySelector("#total").lastElementChild.innerHTML;
+    //preciso somar os valores dos planos que foram adicionados e exibir eles aqui
 }
   
-
-
-
-
-
-
-
-
 //instruções de avanco dos steps
 btn.addEventListener("click", nextStep);
 function nextStep(item){
@@ -201,6 +201,14 @@ function caseFour(){
         sessionStorage.removeItem("plan");
         window.location.reload();
     },3000);
+}
+//navegar pelo indice
+for(let i=0;i<=4;i++){
+    spans[i].addEventListener("click",navigation);
+}
+function navigation(index){
+    cont = Number(index.target.innerHTML)-1;
+    activeStep(cont);
 }
 
 
