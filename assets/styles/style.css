@@ -337,11 +337,13 @@ article #selection{
   }
 
   main section{
-    height:60vh;
     width:80vw;
     border-radius:10px;
     margin-top:-3.5em;
     background-color:#fff;
+  }
+  section article{
+    width:90%;
   }
   #description{
     overflow:hidden;
